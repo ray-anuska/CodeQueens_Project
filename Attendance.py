@@ -30,13 +30,13 @@ def attendance(cap):
     print("Encoding complete")
 
     with open('C:/Users/user/Downloads/Attendance.csv', 'w+') as f:
+        f.writelines(f'\nName,  Time')
         pass
 
     def markAttendance(name) : 
         with open('C:/Users/user/Downloads/Attendance.csv', 'r+') as f:
             myDataList = f.readlines()
             nameList = []
-            print(myDataList)
             for line in myDataList:
                 entry = line.split(',')
                 nameList.append(entry[0])
@@ -68,6 +68,7 @@ def attendance(cap):
             if matches[matchIndex]: 
                 name = Names[matchIndex].upper()
                 print(name)
+                markAttendance(name)
                 y1, x2, y2, x1 = faceLoc
                 cv2.rectangle(img, (x1, y1), (x2, y2), (0, 255, 0), 20)
                 cv2.putText(img, name, (x1 + 6, y2 - 6), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 255, 255), 2)
