@@ -5,7 +5,7 @@ import cv2
 #Initializing the face and eye cascade classifiers from xml files
 def DetectEye(cap) :
 	face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-	eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
+	eye_cascade = cv2.CascadeClassifier('haarcascade_eye_tree_eyeglasses.xml')
 
 	#Variable store execution state
 	first_read = True
